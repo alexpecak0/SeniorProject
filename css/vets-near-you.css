@@ -1,0 +1,177 @@
+/* Layout styles */
+.content-container {
+    display: flex;
+    height: calc(100vh - 100px);
+    margin: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    flex: 0 0 400px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.map-container {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Button styles */
+.locate-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #D9BBAA;
+    border: none;
+    border-radius: 25px;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.locate-btn:hover {
+    background-color: #8B5A44;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Vet card styles */
+.vet-card {
+    display: flex;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vet-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.vet-number {
+    width: 24px;
+    height: 24px;
+    background: #D9BBAA;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+.vet-info {
+    flex: 1;
+}
+
+.vet-info h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.vet-address {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.vet-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.9em;
+}
+
+.vet-rating {
+    color: #8B5A44;
+}
+
+.vet-distance {
+    color: #666;
+}
+
+.vet-status {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.vet-status.open {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.vet-status.closed {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* Loading and error states */
+.loading, .error {
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.loading {
+    color: #8B5A44;
+}
+
+.error {
+    color: #c62828;
+    background: #ffebee;
+}
+
+/* Highlight animation */
+@keyframes highlight {
+    0% { background-color: #D9BBAA; }
+    100% { background-color: white; }
+}
+
+.highlight {
+    animation: highlight 2s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        flex: none;
+        width: auto;
+    }
+
+    .map-container {
+        height: 400px;
+    }
+
+    .vet-details {
+        flex-direction: column;
+    }
+}

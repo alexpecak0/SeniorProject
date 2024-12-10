@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbit Care Information</title>
+    <link rel="stylesheet" href="../css/rabbit.css">
+</head>
+<body>
+
+    <!-- Header Section with Navigation -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#breeds">Rabbit Breeds</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Rabbit Care Information</h1>
+        <p>Discover how to take care of the most common rabbit breeds in the world</p>
+    </section>
+
+    <!-- Search Bar -->
+    <div id="search">
+        <input type="text" id="searchInput" placeholder="Search for a breed..." autocomplete="off">
+        <button onclick="searchBreed()">Search</button>
+        <div id="autocomplete-list"></div>
+    </div>
+
+    <!-- Carousel for Rabbit Breeds -->
+    <div class="carousel-container">
+        <button class="carousel-btn left-btn" onclick="prevSlide()">&#10094;</button>
+        <div class="carousel-inner" id="breed-carousel">
+            <!-- The breed cards will be dynamically injected here -->
+        </div>
+        <button class="carousel-btn right-btn" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Pet Help Project. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/rabbit.js"></script>
+</body>
+</html>

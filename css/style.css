@@ -1,0 +1,280 @@
+/* General Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #F5E6DE; /* Soft beige background */
+    color: #333; /* Dark text */
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #D9BBAA; /* Soft beige */
+    padding: 20px; /* Adjusted padding for better spacing */
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Added margin reset */
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center;
+    gap: 15px;
+}
+
+.navbar ul li a {
+    color: #333; /* Dark text */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.navbar ul li a:hover {
+    background-color: #8B5A44; /* Darker beige for hover */
+    border-radius: 5px;
+    color: #fff; /* White text on hover */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #F5E6DE; /* Soft beige */
+    color: #333;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Animal Gallery Section */
+.animal-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows the items to wrap to the next line */
+    justify-content: center;
+    gap: 20px; /* Adds space between the cards */
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #F1D2C7; /* Light beige-pink tone */
+}
+
+.animal-gallery a {
+    text-decoration: none;
+    color: inherit; /* Keeps the text color */
+}
+
+.animal-card {
+    background-color: #F5E6DE; /* Soft beige */
+    border-radius: 8px;
+    width: 220px;  /* Fixed card width */
+    height: 320px; /* Adjusted card height */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.animal-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.animal-card h3 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.animal-card:hover {
+    transform: translateY(-10px); /* Elevate card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Pet Food Banner */
+.pet-food-banner {
+    position: relative;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.pet-food-banner a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.banner-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.banner-text h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.banner-text p {
+    font-size: 1.2em;
+}
+
+/* Vets Near You Section */
+#vets-near-you {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #F1D2C7; /* Matches the animal gallery background */
+    color: #333;
+}
+
+#vets-near-you h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#vets-near-you button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #D9BBAA; /* Consistent with navigation bar */
+    color: #333;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#vets-near-you button:hover {
+    background-color: #8B5A44; /* Darker shade on hover */
+    color: #fff;
+}
+
+#vets-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vet-item {
+    background-color: #F5E6DE; /* Matches animal card background */
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vet-item h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.vet-item p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Footer */
+footer {
+    background-color: #D9BBAA; /* Beige */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .animal-card {
+        width: 180px;
+        height: 280px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .banner-text h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .animal-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .banner-text h2 {
+        font-size: 1.5em;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.vet-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #F1D2C7;
+}
+
+.vet-section h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.vet-section p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.vet-finder-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    background-color: #D9BBAA;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.vet-finder-btn:hover {
+    background-color: #8B5A44;
+    color: #fff;
+    transform: translateY(-2px);
+}

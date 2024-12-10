@@ -1,0 +1,397 @@
+/* Root Variables */
+:root {
+    --primary-beige: #F5E6DE;
+    --secondary-beige: #D9BBAA;
+    --dark-beige: #8B5A44;
+    --accent-beige: #F1D2C7;
+    --text-dark: #333;
+    --gradient-primary: linear-gradient(135deg, var(--secondary-beige), var(--dark-beige));
+    --gradient-accent: linear-gradient(45deg, var(--accent-beige), var(--dark-beige));
+    --shadow-soft: 0 4px 20px rgba(139, 90, 68, 0.1);
+    --shadow-strong: 0 8px 30px rgba(139, 90, 68, 0.2);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* General Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    background: 
+        linear-gradient(45deg, var(--primary-beige), #FFF, var(--accent-beige)),
+        radial-gradient(circle at 100% 0%, var(--secondary-beige) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, var(--accent-beige) 0%, transparent 50%);
+    background-blend-mode: overlay;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Enhanced Header & Navigation */
+.navbar {
+    background: var(--gradient-primary);
+    padding: 20px;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 4px 25px rgba(139, 90, 68, 0.15);
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar ul li:nth-child(2) { /* Hiding Bird Species button */
+    display: none;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.navbar ul li a:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Enhanced Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: var(--gradient-accent);
+    opacity: 0.1;
+    filter: blur(50px);
+}
+
+.hero::before {
+    top: -100px;
+    left: -100px;
+    animation: float 8s infinite alternate;
+}
+
+.hero::after {
+    bottom: -100px;
+    right: -100px;
+    animation: float 8s infinite alternate-reverse;
+}
+
+.hero h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s ease;
+}
+
+.hero:hover h1::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.hero p {
+    font-size: 1.6em;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Enhanced Search Section */
+#search {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+.search-container {
+    display: flex;
+    gap: 15px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 20px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+#searchInput:focus {
+    outline: none;
+    box-shadow: var(--shadow-strong);
+    transform: scale(1.01);
+}
+
+#search button {
+    padding: 20px 40px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+#search button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+#search button:hover::before {
+    left: 100%;
+}
+
+#autocomplete-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+}
+
+#autocomplete-list div {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(139, 90, 68, 0.1);
+}
+
+#autocomplete-list div:hover {
+    background: var(--accent-beige);
+    padding-left: 35px;
+}
+
+/* Enhanced Breed Cards */
+.breed-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    margin: 60px auto;
+    max-width: 1000px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.breed-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 48%, var(--secondary-beige) 49%, var(--dark-beige) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, var(--secondary-beige) 49%, var(--dark-beige) 51%, transparent 52%);
+    background-size: 30px 30px;
+    opacity: 0.1;
+}
+
+.breed-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+.breed-card:hover img {
+    transform: perspective(1000px) rotateX(2deg);
+    box-shadow: var(--shadow-strong);
+}
+
+.breed-card h2 {
+    font-size: 3em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+.breed-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(139, 90, 68, 0.1);
+    transition: var(--transition);
+    position: relative;
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-soft);
+}
+
+.info-item strong {
+    display: block;
+    color: var(--dark-beige);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.info-content {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Carousel Navigation */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 80px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.left-btn { left: 10px; }
+.right-btn { right: 10px; }
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, 20px); }
+}
+
+.breed-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3.5em; }
+    .breed-card { margin: 30px 20px; }
+    .breed-info-grid { grid-template-columns: 1fr; }
+    .carousel-container { padding: 0 50px; }
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    #search { padding: 0 15px; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2.8em; }
+    .hero p { font-size: 1.2em; }
+    .breed-card {
+        padding: 20px;
+        margin: 20px;
+    }
+    .breed-card img { height: 300px; }
+    .carousel-container { padding: 0 40px; }
+}

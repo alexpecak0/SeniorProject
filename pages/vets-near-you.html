@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vets Near You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/vets-near-you.css">
+    <!-- Google Maps API -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5pfpRsoKa35gfyEr6Em-LtgArLIy5cho&libraries=places,geometry&callback=initMap">
+    </script>
+</head>
+<body>
+    <!-- Header Section with Navigation -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="dog.html">Dogs</a></li>
+                <li><a href="cat.html">Cats</a></li>
+                <li><a href="fish.html">Fish</a></li>
+                <li><a href="hamster.html">Hamsters</a></li>
+                <li><a href="bird.html">Birds</a></li>
+                <li><a href="reptile.html">Reptiles</a></li>
+                <li><a href="horse.html">Horses</a></li>
+                <li><a href="rabbit.html">Rabbits</a></li>
+                <li><a href="ferret.html">Ferrets</a></li>
+                <li><a href="guinea-pig.html">Guinea Pigs</a></li>
+                <li><a href="pet-food.html">Pet Food</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content-container">
+        <!-- Sidebar with vet listings -->
+        <div class="sidebar">
+            <h2>Veterinarians Near You</h2>
+            <button id="findVetsBtn" onclick="getLocation()" class="locate-btn">Find Vets Near Me</button>
+            <div id="vets-list">
+                <!-- Vet cards will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Map container -->
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Pet Help Project. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file -->
+    <script src="../js/vets-near-you.js"></script>
+</body>
+</html>

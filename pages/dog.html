@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Care Information</title>
+    <!-- Link to Playfair Display font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="../css/dogs.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#breeds">Dog Breeds</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Dog Care Information</h1>
+        <p>Discover how to take care of the most common dog breeds in the world</p>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search">
+        <input type="text" id="searchInput" placeholder="Search for a breed..." />
+        <button onclick="searchBreed()">Search</button>
+        <div id="autocomplete-list"></div> <!-- Container for autofill suggestions -->
+    </section>
+
+    <!-- Carousel Section -->
+    <section id="breeds" class="breed-carousel">
+        <h2>Top Dog Breeds and Their Care</h2>
+
+        <!-- Breed Cards Carousel -->
+        <div class="carousel-container">
+            <button class="carousel-btn left-btn" onclick="prevBreed()">&#10094;</button>
+
+            <div class="carousel-inner">
+                <!-- Breed 1: Labrador Retriever -->
+                <div class="breed-card" id="labrador">
+                    <img src="../images/labrador.jpg" alt="Labrador Retriever">
+                    <div>
+                        <h3>Labrador Retriever</h3>
+                        <p><strong>Diet:</strong> High-protein diet with a balance of fats and carbs.</p>
+                        <p><strong>Activity Level:</strong> Very high, requires at least 1 hour of exercise daily.</p>
+                        <p><strong>Care:</strong> Grooming weekly, brushing teeth regularly.</p>
+                        <p><strong>Cost:</strong> $800 - $1,200 for a puppy, plus ongoing costs.</p>
+                        <p><strong>Vet Visits:</strong> Annual checkups, especially for hip dysplasia screening.</p>
+                        <p><strong>Common Health Conditions:</strong> Hip dysplasia, obesity, eye disorders.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 2: German Shepherd -->
+                <div class="breed-card" id="german-shepherd">
+                    <img src="../images/german-shepherd.jpg" alt="German Shepherd">
+                    <div>
+                        <h3>German Shepherd</h3>
+                        <p><strong>Diet:</strong> Protein-rich diet with essential vitamins.</p>
+                        <p><strong>Activity Level:</strong> High, requires both mental and physical stimulation daily.</p>
+                        <p><strong>Care:</strong> Regular grooming to manage shedding, weekly brushing.</p>
+                        <p><strong>Cost:</strong> $500 - $1,500 for a puppy, plus ongoing care.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups for joint and bone health.</p>
+                        <p><strong>Common Health Conditions:</strong> Hip dysplasia, elbow dysplasia, digestive issues.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 3: Golden Retriever -->
+                <div class="breed-card" id="golden-retriever">
+                    <img src="../images/golden-retriever.jpg" alt="Golden Retriever">
+                    <div>
+                        <h3>Golden Retriever</h3>
+                        <p><strong>Diet:</strong> Balanced diet with protein, healthy fats, and omega-3 fatty acids.</p>
+                        <p><strong>Activity Level:</strong> High, enjoys long walks, playing fetch, and swimming.</p>
+                        <p><strong>Care:</strong> Frequent grooming, especially during shedding season.</p>
+                        <p><strong>Cost:</strong> $800 - $1,500 for a puppy, grooming adds extra cost.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups for hip and heart conditions.</p>
+                        <p><strong>Common Health Conditions:</strong> Cancer, hip dysplasia, cataracts.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 4: Bulldog -->
+                <div class="breed-card" id="bulldog">
+                    <img src="../images/bulldog.jpg" alt="Bulldog">
+                    <div>
+                        <h3>Bulldog</h3>
+                        <p><strong>Diet:</strong> Controlled diet with limited treats due to tendency to gain weight.</p>
+                        <p><strong>Activity Level:</strong> Low to moderate; daily short walks recommended.</p>
+                        <p><strong>Care:</strong> Regular cleaning of skin folds to prevent infections.</p>
+                        <p><strong>Cost:</strong> $1,500 - $4,000 for a puppy due to breeding complexities.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups, especially for breathing issues.</p>
+                        <p><strong>Common Health Conditions:</strong> Brachycephalic syndrome, hip dysplasia.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 5: Poodle -->
+                <div class="breed-card" id="poodle">
+                    <img src="../images/poodle.jpg" alt="Poodle">
+                    <div>
+                        <h3>Poodle</h3>
+                        <p><strong>Diet:</strong> High-protein diet to maintain energy levels.</p>
+                        <p><strong>Activity Level:</strong> Very high, requires daily exercise and mental stimulation.</p>
+                        <p><strong>Care:</strong> Regular grooming, especially trimming of curly coat.</p>
+                        <p><strong>Cost:</strong> $1,000 - $2,000 for a puppy; grooming costs are substantial.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups to monitor for allergies and joint issues.</p>
+                        <p><strong>Common Health Conditions:</strong> Hip dysplasia, allergies, ear infections.</p>
+                    </div>
+                </div>
+
+                <!-- Additional 10 Breeds -->
+
+                <!-- Breed 6: Beagle -->
+                <div class="breed-card" id="beagle">
+                    <img src="../images/beagle.jpg" alt="Beagle">
+                    <div>
+                        <h3>Beagle</h3>
+                        <p><strong>Diet:</strong> Balanced diet, with a focus on controlled portions to prevent obesity.</p>
+                        <p><strong>Activity Level:</strong> High, requires regular walks and playtime.</p>
+                        <p><strong>Care:</strong> Weekly grooming and regular ear cleaning.</p>
+                        <p><strong>Cost:</strong> $500 - $1,200 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups for ear infections and joint health.</p>
+                        <p><strong>Common Health Conditions:</strong> Hip dysplasia, epilepsy, ear infections.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 7: Dachshund -->
+                <div class="breed-card" id="dachshund">
+                    <img src="../images/dachshund.jpg" alt="Dachshund">
+                    <div>
+                        <h3>Dachshund</h3>
+                        <p><strong>Diet:</strong> Balanced diet to prevent weight gain, which can lead to back issues.</p>
+                        <p><strong>Activity Level:</strong> Moderate, daily walks recommended.</p>
+                        <p><strong>Care:</strong> Regular grooming, especially for long-haired varieties.</p>
+                        <p><strong>Cost:</strong> $500 - $1,500 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups to monitor for back problems.</p>
+                        <p><strong>Common Health Conditions:</strong> Intervertebral disc disease, obesity, dental issues.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 8: Yorkshire Terrier -->
+                <div class="breed-card" id="yorkshire-terrier">
+                    <img src="../images/yorkshire-terrier.jpg" alt="Yorkshire Terrier">
+                    <div>
+                        <h3>Yorkshire Terrier</h3>
+                        <p><strong>Diet:</strong> High-quality dry food to support their small size and fast metabolism.</p>
+                        <p><strong>Activity Level:</strong> Moderate, requires short daily walks and indoor play.</p>
+                        <p><strong>Care:</strong> Daily grooming to prevent matting in long coats.</p>
+                        <p><strong>Cost:</strong> $800 - $2,000 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular dental checkups are important.</p>
+                        <p><strong>Common Health Conditions:</strong> Dental issues, patellar luxation, tracheal collapse.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 9: Doberman Pinscher -->
+                <div class="breed-card" id="doberman-pinscher">
+                    <img src="../images/doberman.jpg" alt="Doberman Pinscher">
+                    <div>
+                        <h3>Doberman Pinscher</h3>
+                        <p><strong>Diet:</strong> High-protein diet to support muscle growth and energy.</p>
+                        <p><strong>Activity Level:</strong> Very high, requires regular exercise and mental stimulation.</p>
+                        <p><strong>Care:</strong> Minimal grooming, but regular exercise is crucial.</p>
+                        <p><strong>Cost:</strong> $1,500 - $2,500 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Annual checkups, especially for heart and joint health.</p>
+                        <p><strong>Common Health Conditions:</strong> Dilated cardiomyopathy, hip dysplasia.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 10: Boxer -->
+                <div class="breed-card" id="boxer">
+                    <img src="../images/boxer.jpg" alt="Boxer">
+                    <div>
+                        <h3>Boxer</h3>
+                        <p><strong>Diet:</strong> Balanced diet to maintain their high energy levels.</p>
+                        <p><strong>Activity Level:</strong> High, requires regular exercise and playtime.</p>
+                        <p><strong>Care:</strong> Weekly grooming, with attention to ear and dental hygiene.</p>
+                        <p><strong>Cost:</strong> $700 - $2,500 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups for heart health and cancer screening.</p>
+                        <p><strong>Common Health Conditions:</strong> Cancer, hip dysplasia, heart issues.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 11: Rottweiler -->
+                <div class="breed-card" id="rottweiler">
+                    <img src="../images/rottweiler.jpg" alt="Rottweiler">
+                    <div>
+                        <h3>Rottweiler</h3>
+                        <p><strong>Diet:</strong> High-quality protein diet to support muscle development.</p>
+                        <p><strong>Activity Level:</strong> High, requires regular exercise and mental stimulation.</p>
+                        <p><strong>Care:</strong> Minimal grooming; weekly brushing and nail trimming required.</p>
+                        <p><strong>Cost:</strong> $1,500 - $3,000 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups for hip and elbow dysplasia.</p>
+                        <p><strong>Common Health Conditions:</strong> Hip dysplasia, elbow dysplasia, heart issues.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 12: German Shorthaired Pointer -->
+                <div class="breed-card" id="german-shorthaired-pointer">
+                    <img src="../images/german-shorthaired-pointer.jpg" alt="German Shorthaired Pointer">
+                    <div>
+                        <h3>German Shorthaired Pointer</h3>
+                        <p><strong>Diet:</strong> High-protein diet for energy and muscle maintenance.</p>
+                        <p><strong>Activity Level:</strong> Very high, needs daily exercise and mental stimulation.</p>
+                        <p><strong>Care:</strong> Minimal grooming, but regular exercise is critical.</p>
+                        <p><strong>Cost:</strong> $600 - $1,500 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups, especially for hip and joint health.</p>
+                        <p><strong>Common Health Conditions:</strong> Hip dysplasia, cancer, bloat.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 13: Shih Tzu -->
+                <div class="breed-card" id="shih-tzu">
+                    <img src="../images/shih-tzu.jpg" alt="Shih Tzu">
+                    <div>
+                        <h3>Shih Tzu</h3>
+                        <p><strong>Diet:</strong> High-quality dry food to support their small size and energy.</p>
+                        <p><strong>Activity Level:</strong> Low to moderate; daily walks are enough.</p>
+                        <p><strong>Care:</strong> Daily grooming to prevent matting and regular eye cleaning.</p>
+                        <p><strong>Cost:</strong> $500 - $1,500 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular checkups for dental and eye health.</p>
+                        <p><strong>Common Health Conditions:</strong> Dental problems, eye issues, breathing problems.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 14: Pomeranian -->
+                <div class="breed-card" id="pomeranian">
+                    <img src="../images/pomeranian.jpg" alt="Pomeranian">
+                    <div>
+                        <h3>Pomeranian</h3>
+                        <p><strong>Diet:</strong> Small-breed food to maintain weight and energy levels.</p>
+                        <p><strong>Activity Level:</strong> Moderate, requires short daily walks and indoor play.</p>
+                        <p><strong>Care:</strong> Regular grooming to maintain fluffy coat.</p>
+                        <p><strong>Cost:</strong> $800 - $3,000 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Regular dental checkups are crucial.</p>
+                        <p><strong>Common Health Conditions:</strong> Dental problems, patellar luxation, heart issues.</p>
+                    </div>
+                </div>
+
+                <!-- Breed 15: Great Dane -->
+                <div class="breed-card" id="great-dane">
+                    <img src="../images/great-dane.jpg" alt="Great Dane">
+                    <div>
+                        <h3>Great Dane</h3>
+                        <p><strong>Diet:</strong> High-quality diet to maintain muscle and prevent bloating.</p>
+                        <p><strong>Activity Level:</strong> Moderate; needs regular walks but not overly active.</p>
+                        <p><strong>Care:</strong> Regular grooming, especially brushing and nail trimming.</p>
+                        <p><strong>Cost:</strong> $1,000 - $3,000 for a puppy.</p>
+                        <p><strong>Vet Visits:</strong> Annual checkups, especially for heart and joint health.</p>
+                        <p><strong>Common Health Conditions:</strong> Hip dysplasia, heart disease, bloat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn right-btn" onclick="nextBreed()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Pet Help Project. All rights reserved.</p>
+    </footer>
+
+    <!-- Carousel and Search Script -->
+    <script src="../js/dogs.js"></script>
+</body>
+</html>

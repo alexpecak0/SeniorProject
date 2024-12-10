@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Care Information</title>
+    <link rel="stylesheet" href="../css/fish.css">
+</head>
+<body>
+
+    <!-- Header Section with Navigation -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#breeds">Fish Species</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Fish Care Information</h1>
+        <p>Discover how to take care of the most common pet fish species</p>
+    </section>
+
+    <!-- Search Bar -->
+    <div id="search">
+        <input type="text" id="searchInput" placeholder="Search for a fish species..." autocomplete="off" />
+        <button onclick="searchBreed()">Search</button>
+        <div id="autocomplete-list"></div>
+    </div>
+
+    <!-- Carousel for Fish Species -->
+    <div class="carousel-container">
+        <button class="carousel-btn left-btn" onclick="prevSlide()">&#10094;</button>
+        <div class="carousel-inner" id="breed-carousel">
+            <!-- The breed cards will be dynamically injected here -->
+        </div>
+        <button class="carousel-btn right-btn" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Pet Help Project. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/fish.js"></script>
+</body>
+</html>
